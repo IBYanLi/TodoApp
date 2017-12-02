@@ -13,7 +13,7 @@ h1{
     font-size: 50px;
 }
 
-.col-sm-3{
+.col{
     margin: 5px auto;
     text-align : center;
 }
@@ -24,11 +24,13 @@ h1{
 
 }
 
-.col-sm-3{
+.col{
     margin: 5px;
-    size: 100px;
 }
-
+.col-3{
+    margin-left: 38px;
+    margin-right: 38px;
+}
 
 .fields{
     size: 50px;
