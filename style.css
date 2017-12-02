@@ -15,6 +15,7 @@ h1{
 
 .col{
     margin: 5px auto;
+    width: 10vh
     text-align : center;
 }
 
@@ -27,9 +28,8 @@ h1{
 .col{
     margin: 5px;
 }
-.col-3{
-    margin-left: 38px;
-    margin-right: 38px;
+#time{
+    line-height: 1.5;
 }
 
 .fields{
