@@ -1,0 +1,37 @@
+body{
+    font-family: 'Encode Sans Condensed', sans-serif;
+    text-align: center;
+    font-size: 18px;
+    background-color: rgb(217, 219, 226);
+
+}
+
+h1{
+    font-family: 'Amatic SC', cursive;
+    color: #303030;
+    text-align: center;
+    font-size: 50px;
+}
+
+.col{
+    margin: 5px auto;
+    text-align : center;
+}
+
+.row{
+    display : flex;
+    margin: 4px auto;
+
+}
+
+.col{
+    margin: 5px;
+}
+.col-3{
+    margin-left: 38px;
+    margin-right: 38px;
+}
+
+.fields{
+    size: 50px;
+}

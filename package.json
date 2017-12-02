@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/IBYanLi/TodoApp/issues"
   },
-  "homepage": "https://github.com/IBYanLi/TodoApp#readme"
+  "homepage": "https://github.com/IBYanLi/TodoApp#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
