@@ -1,15 +1,26 @@
-const express = require('express');
-const app = express();
-app.use(express.static("/Users/Yan Li/Documents/Personal Programming/UBCHacks2017/public"))
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://todo:list@ds044667.mlab.com:44667/todoapp";
+const express = require('express')
+const app = express()
+app.use(express.static("public"))
 
-MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  console.log("Database created!");
-  db.close();
-});
+const bodyParser= require('body-parser')
+app.use(bodyParser.urlencoded({extended: true}))
+var MongoClient = require('mongodb').MongoClient
+var url = "mongodb://todo:list@ds044667.mlab.com:44667/todoapp"
+var db
 
-app.listen(3000, function() {
-  console.log('listening on 3000')
+MongoClient.connect(url, function(err, database) {
+  if (err) return console.log(err)
+  db = database
+  app.listen(3000, () => {
+    console.log('listening on 3000')
+  })
+})
+
+app.post('/todo', (req, res) => {
+  db.collection('monday').save(req.body, (err, result) => {
+    if (err) return console.log(err)
+
+    console.log('saved to database')
+    res.redirect('/')
+  })
 })
