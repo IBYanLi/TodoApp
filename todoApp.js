@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 app.use(express.static("public"))
-
+console.log("run")
 const bodyParser= require('body-parser')
 app.use(bodyParser.urlencoded({extended: true}))
 var MongoClient = require('mongodb').MongoClient
@@ -17,10 +17,15 @@ MongoClient.connect(url, function(err, database) {
 })
 
 app.post('/todo', (req, res) => {
-  db.collection('monday').save(req.body, (err, result) => {
-    if (err) return console.log(err)
 
-    console.log('saved to database')
-    res.redirect('/')
+  db.collection('monday').find().toArray(function(err, results) {
+    console.log(results)
+    db.collection('monday').updateOne(results[0], req.body, function(err, result) {
+      if (err) return console.log(err)
+
+      console.log('updated database')
+      res.redirect('/')
+    })
   })
+
 })
